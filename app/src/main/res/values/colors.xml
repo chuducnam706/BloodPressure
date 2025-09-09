@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="Normal">#00C57E</color>
+    <color name="bp_elevated">#E9D841</color> 
+    <color name="bp_stage1">#FEC415</color>   
+    <color name="bp_stage2">#FA9C0F</color>   
+    <color name="bp_danger">#FB5555</color>
+</resources>

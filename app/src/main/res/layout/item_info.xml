@@ -1,0 +1,46 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#EEF4FB">
+
+    <TextView
+        android:id="@+id/bgItemInfo"
+        android:layout_width="156dp"
+        android:layout_height="92dp"
+        android:elevation="8dp"
+        android:background="@drawable/bg_item_info"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/icon"
+        android:layout_width="70dp"
+        android:layout_height="71dp"
+        android:background="@drawable/bg_icon_info"
+        android:backgroundTint="#0AB678"
+        android:elevation="10dp"
+        android:padding="8dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/img_blood_pressure"
+        app:layout_constraintBottom_toTopOf="@id/bgItemInfo"
+        app:layout_constraintEnd_toEndOf="@id/bgItemInfo"
+        app:layout_constraintStart_toStartOf="@id/bgItemInfo"
+        app:layout_constraintTop_toTopOf="@id/bgItemInfo" />
+
+    <TextView
+        android:id="@+id/txtTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:fontFamily="@font/mulish_semi_bold_600"
+        android:text=""
+        android:textColor="#2E3A59"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@id/bgItemInfo"
+        app:layout_constraintEnd_toEndOf="@id/bgItemInfo"
+        app:layout_constraintStart_toStartOf="@id/bgItemInfo" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="16dp">
+
+
+    <ImageView
+        android:id="@+id/imgHearthealth"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:src="@drawable/dangerously_high_blood"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <LinearLayout
+        android:id="@+id/bgListInfo"
+        android:layout_width="240dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_item_more_info"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txtSystolic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="&lt; 120"
+                android:textColor="#1E252B"
+                android:textSize="16sp"
+                android:fontFamily="@font/mulish_bold"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txtAnd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="4dp"
+                android:paddingBottom="4dp"
+                android:text="AND"
+                android:textColor="#1E252B"
+                android:textSize="8sp" />
+
+            <TextView
+                android:id="@+id/txtDiastolic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="&lt; 60"
+                android:textColor="#1E252B"
+                android:textSize="16sp"
+                android:fontFamily="@font/mulish_bold"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:alpha="0.5"
+            android:background="#FFFFFF99" />
+
+        <TextView
+            android:id="@+id/txtStatus"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="start"
+            android:fontFamily="@font/mulish_bold"
+            android:text="Normal Blood Pressure"
+            android:textColor="#1E252B"
+            android:textSize="10sp"
+            android:textStyle="bold"
+            android:layout_marginStart="8dp"/>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

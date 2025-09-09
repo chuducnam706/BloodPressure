@@ -1,0 +1,129 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="16dp"
+    android:background="@drawable/bg_setting_item"
+    android:padding="16dp">
+
+    <ImageView
+        android:id="@+id/imgBloodSugare"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:src="@drawable/blood_sugar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtBlood"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="6dp"
+        android:fontFamily="@font/inter_semi_bold_600"
+        android:text="Blood Sugar"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@id/imgBloodSugare"
+        app:layout_constraintEnd_toStartOf="@id/txtNABloodSugare"
+        app:layout_constraintStart_toEndOf="@id/imgBloodSugare"
+        app:layout_constraintTop_toTopOf="@id/imgBloodSugare" />
+
+    <TextView
+        android:id="@+id/txtNABloodSugare"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/inter_500"
+        android:text="@string/na"
+        android:textColor="#666666"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@id/txtBlood"
+        app:layout_constraintEnd_toStartOf="@id/imgArrowBloodSugare"
+        app:layout_constraintTop_toTopOf="@id/txtBlood" />
+
+    <ImageView
+        android:id="@+id/imgArrowBloodSugare"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:layout_marginStart="4dp"
+        android:src="@drawable/ic_chevron_right"
+        app:layout_constraintBottom_toBottomOf="@id/txtNABloodSugare"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/txtNABloodSugare" />
+
+    <TextView
+        android:id="@+id/txtAddRecordHintBloodSugare"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:fontFamily="@font/inter_400"
+        android:text="@string/oneRecoed"
+        android:textColor="#666666"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="@id/imgBloodSugare"
+        app:layout_constraintTop_toBottomOf="@id/txtBlood" />
+
+    <TextView
+        android:id="@+id/txtMaxBloodSugare"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/inter_400"
+        android:text="@string/max"
+        android:textColor="#404040"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@id/txtAddRecordHintBloodSugare"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1"
+        app:layout_constraintStart_toEndOf="@id/txtAddRecordHintBloodSugare" />
+
+    <TextView
+        android:id="@+id/txtMinBloodSugare"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="40dp"
+        android:fontFamily="@font/inter_400"
+        android:text="@string/min"
+        android:textColor="#404040"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@id/txtAddRecordHintBloodSugare"
+        app:layout_constraintEnd_toStartOf="@id/txtMaxBloodSugare" />
+
+    <TextView
+        android:id="@+id/btnAddRecordBlood"
+        android:layout_width="140dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/bg_add_record"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:text="@string/add_record"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        app:layout_constraintStart_toStartOf="@id/imgBloodSugare"
+        app:layout_constraintTop_toBottomOf="@id/txtAddRecordHintBloodSugare" />
+
+    <TextView
+        android:id="@+id/bindViewMin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/inter_500"
+        android:text="--"
+        android:textColor="#666666"
+        android:textSize="14sp"
+        app:layout_constraintBaseline_toBaselineOf="@id/btnAddRecordBlood"
+        app:layout_constraintEnd_toEndOf="@id/txtMinBloodSugare"
+        app:layout_constraintStart_toStartOf="@id/txtMinBloodSugare" />
+
+    <TextView
+        android:id="@+id/Max"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/inter_500"
+        android:text="--"
+        android:textColor="#666666"
+        android:textSize="14sp"
+        app:layout_constraintBaseline_toBaselineOf="@id/btnAddRecordBlood"
+        app:layout_constraintEnd_toEndOf="@id/txtMaxBloodSugare"
+        app:layout_constraintStart_toStartOf="@id/txtMaxBloodSugare" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

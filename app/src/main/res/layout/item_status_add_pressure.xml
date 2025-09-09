@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+
+    <TextView
+        android:id="@+id/bgStatus"
+        android:layout_width="60dp"
+        android:layout_height="18dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="8dp"
+        android:background="#00C57E" />
+
+    <ImageView
+        android:id="@+id/imgHeart"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="27dp"
+        android:src="@drawable/ic_heart" />
+
+
+</RelativeLayout>
+
+
+

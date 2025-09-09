@@ -1,0 +1,20 @@
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item>
+        <shape android:shape="oval">
+            <solid android:color="@android:color/transparent"/>
+            <stroke android:width="2dp" android:color="#E53935"/> <!-- viền đỏ -->
+            <size android:width="24dp" android:height="24dp"/>
+        </shape>
+    </item>
+
+    <item
+        android:width="12dp"
+        android:height="12dp"
+        android:gravity="center">
+        <shape android:shape="oval">
+            <solid android:color="#E53935"/>
+        </shape>
+    </item>
+
+</layer-list>

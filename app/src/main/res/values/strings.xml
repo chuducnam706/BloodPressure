@@ -1,0 +1,54 @@
+<resources>
+    <string name="app_name">Blood</string>
+
+    <string name="title">Blood</string>
+    <string name="content">Pressure Tracker</string>
+    <string name="hello">Good morning!</string>
+    <string name="health">How are you feeling to day?</string>
+    <string name="next">Next</string>
+    <string name="bloodPressure">Blood Pressure</string>
+    <string name="viewAll">View All</string>
+    <string name="languages">Languages</string>
+    <string name="setting">Setting</string>
+    <string name="infomation">Infomation</string>
+    <string name="language_options">Language Options</string>
+    <string name="share">Share with Friends</string>
+    <string name="policy">Privacy Policy</string>
+    <string name="rate">Rate Us</string>
+    <string name="add_record"> + Add Record</string>
+    <string name="min">Min</string>
+    <string name="max">Max</string>
+    <string name="na">N/A</string>
+    <string name="mgDl">mg/dL</string>
+    <string name="oneRecoed">Add at least 1 record</string>
+    <string name="moreInfo">More infomation</string>
+    <string name="gotIt">Got it</string>
+    <string name="save">Save</string>
+    <string name="dateTime">Date &amp; Time</string>
+    <string name="note">Note</string>
+    <string name="addPressure">Add Blood Pressure</string>
+    <string name="updatePressure">Edit Blood Pressure</string>
+    <string name="result">Result</string>
+    <string name="goHome">Go Home</string>
+    <string name="contentIntroduction">
+        Blood pressure disorders often have no visible my symptims,
+        which can be dangerous because high or low blood pressure can lead to life - threatening conditions like heart attack to stroke.
+        However, you can prevents or treat them early through monitoring your blood pressure levels.
+        Early diagnosis and healthy lifestyle changes can help you maintain good blood pressure and prevent health problems.</string>
+    <string name="whatIsBloodPressure">
+        Blood pressure refers to the force that blood exerts against the walls of your arteries it is pumped out from the heart.
+        Checking your heart is working and is an essential part of a general health assessment.
+        Proper medication management and blood pressure monitoring are critical for people with high blood pressure.
+    </string>
+    
+    <string name="howIsHighBloodPressureDiagnosed">
+        The only way to know if you have high blood pressure is to get regular checks from a healthcare provider.
+        If your blood pressure is normal, your providers should check it at every annual checkup.
+        If your readings are high, your provider may ask you to monitor your blood pressure at home several times a day or once a week.
+    </string>
+
+
+    <string name="mulish400">font/mulish_bold.ttf</string>
+
+
+</resources>

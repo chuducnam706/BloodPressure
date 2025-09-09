@@ -1,0 +1,387 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f2f6ff"
+    android:orientation="vertical">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="#E34957">
+
+        <TextView
+            android:id="@+id/btnBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:background="@drawable/ic_back"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/txtTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/mulish_extra_bold_800"
+            android:text="@string/updatePressure"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageView
+        android:id="@+id/imgHrart"
+        android:layout_width="56dp"
+        android:layout_height="64dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/normal_blood_pressure" />
+
+    <TextView
+        android:id="@+id/txtStateBloodPressure"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/mulish_bold"
+        android:text="Normal Blood Pressure"
+        android:textColor="#1E2D50"
+        android:textSize="18sp" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp">
+
+        <TextView
+            android:id="@+id/txtSys"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginEnd="8dp"
+            android:text="SYS &lt; 120 "
+            android:textColor="#1E2D50"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toStartOf="@id/txtOr"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/txtOr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="or"
+            android:textColor="#1E2D50"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/txtDia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:text="SYS &lt; 120 "
+            android:textColor="#1E2D50"
+            android:textSize="14sp"
+            app:layout_constraintStart_toEndOf="@id/txtOr"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/lstStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:orientation="horizontal"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:spanCount="1">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+    <TextView
+        android:id="@+id/btnMoreInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:fontFamily="@font/mulish_semi_bold_italic"
+        android:text="More infomation"
+        android:textColor="#B55559"
+        android:textSize="18sp"
+        android:layout_marginBottom="8dp"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="328dp"
+        android:layout_height="200dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/bg_setting_item">
+
+
+        <TextView
+            android:id="@+id/txtSystolic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/mulish_bold"
+            android:text="Systolic"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/txtMmHgSystolic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:text="mmHg"
+            app:layout_constraintEnd_toEndOf="@id/txtSystolic"
+            app:layout_constraintStart_toStartOf="@id/txtSystolic"
+            app:layout_constraintTop_toBottomOf="@id/txtSystolic" />
+
+        <com.shawnlin.numberpicker.NumberPicker
+            android:id="@+id/numberPickerSystolic"
+            android:layout_width="64dp"
+            android:layout_height="140dp"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="@id/txtMmHgSystolic"
+            app:layout_constraintStart_toStartOf="@id/txtMmHgSystolic"
+            app:layout_constraintTop_toBottomOf="@id/txtMmHgSystolic"
+            app:np_dividerColor="#0AB678"
+            app:np_height="180dp"
+            app:np_max="200"
+            app:np_min="1"
+            app:np_value="30"
+            app:np_selectedTextColor="#1E2D50"
+            app:np_selectedTextSize="@dimen/selected_text_size"
+            app:np_textColor="#565656"
+            app:np_textSize="@dimen/text_size"
+            app:np_typeface="@string/mulish400"
+            app:np_width="64dp" />
+
+        <TextView
+            android:id="@+id/txtDiastolic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/mulish_bold"
+            android:text="Diastolic"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/txtMmHgDiastolic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:text="mmHg"
+            app:layout_constraintEnd_toEndOf="@id/txtDiastolic"
+            app:layout_constraintStart_toStartOf="@id/txtDiastolic"
+            app:layout_constraintTop_toBottomOf="@id/txtDiastolic" />
+
+        <com.shawnlin.numberpicker.NumberPicker
+            android:id="@+id/numberPickerDiastolic"
+            android:layout_width="64dp"
+            android:layout_height="140dp"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="@id/txtMmHgDiastolic"
+            app:layout_constraintStart_toStartOf="@id/txtMmHgDiastolic"
+            app:layout_constraintTop_toBottomOf="@id/txtMmHgDiastolic"
+            app:np_dividerColor="#0AB678"
+            app:np_height="180dp"
+            app:np_max="200"
+            app:np_min="1"
+            app:np_value="40"
+            app:np_selectedTextColor="#1E2D50"
+            app:np_selectedTextSize="@dimen/selected_text_size"
+            app:np_textColor="#565656"
+            app:np_textSize="@dimen/text_size"
+            app:np_typeface="@string/mulish400"
+            app:np_width="64dp" />
+
+        <TextView
+            android:id="@+id/txtLicPulse"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="24dp"
+            android:fontFamily="@font/mulish_bold"
+            android:text="Pulse"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/txtMmHgLiclicPulse"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:text="mmHg"
+            app:layout_constraintEnd_toEndOf="@id/txtLicPulse"
+            app:layout_constraintStart_toStartOf="@id/txtLicPulse"
+            app:layout_constraintTop_toBottomOf="@id/txtLicPulse" />
+
+        <com.shawnlin.numberpicker.NumberPicker
+            android:id="@+id/numberPickerPulse"
+            android:layout_width="64dp"
+            android:layout_height="140dp"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="@id/txtMmHgLiclicPulse"
+            app:layout_constraintStart_toStartOf="@id/txtMmHgLiclicPulse"
+            app:layout_constraintTop_toBottomOf="@id/txtMmHgLiclicPulse"
+            app:np_dividerColor="#0AB678"
+            app:np_height="180dp"
+            app:np_max="200"
+            app:np_min="1"
+            app:np_value="40"
+            app:np_selectedTextColor="#1E2D50"
+            app:np_selectedTextSize="@dimen/selected_text_size"
+            app:np_textColor="#565656"
+            app:np_textSize="@dimen/text_size"
+            app:np_typeface="@string/mulish400"
+            app:np_width="64dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/txtTimeAnDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="38dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/montserrat_700"
+        android:text="@string/dateTime"
+        android:textColor="#B21212"
+        android:textSize="18sp" />
+
+    <LinearLayout
+        android:layout_width="328dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="8dp"
+        android:orientation="horizontal">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_time_date">
+
+            <TextView
+                android:id="@+id/btnCalendar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ic_calendar"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/txtCalendar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:fontFamily="@font/mulish_semi_bold_600"
+                android:text="01/07/2023"
+                android:textColor="#1E2D50"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@id/btnCalendar"
+                app:layout_constraintStart_toEndOf="@id/btnCalendar"
+                app:layout_constraintTop_toTopOf="@id/btnCalendar" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_time_date">
+
+            <TextView
+                android:id="@+id/btnClock"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ic_clock"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/txtTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:fontFamily="@font/mulish_semi_bold_600"
+                android:text="08:00"
+                android:textColor="#1E2D50"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@id/btnClock"
+                app:layout_constraintStart_toEndOf="@id/btnClock"
+                app:layout_constraintTop_toTopOf="@id/btnClock" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/txtNote"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="38dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/montserrat_700"
+        android:text="@string/note"
+        android:textColor="#B21212"
+        android:textSize="18sp" />
+
+    <EditText
+        android:id="@+id/edtNote"
+        android:layout_width="328dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/bg_edt_add_pressure"
+        android:hint="Your tagline here"
+        android:padding="10dp"
+        android:textColor="#000000"
+        android:textColorHint="#999999"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/btnSave"
+        android:layout_width="328dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/bg_btn_got_it"
+        android:padding="16dp"
+        android:text="@string/save"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp" />
+
+</LinearLayout>
