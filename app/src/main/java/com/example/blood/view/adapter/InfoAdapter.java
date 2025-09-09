@@ -59,6 +59,7 @@ public class InfoAdapter extends RecyclerView.Adapter<InfoAdapter.ViewHolder> {
             super(binding.getRoot());
             this.binding = binding;
             clickItemInfo();
+
         }
 
         private void bindView(Infomation infomation) {
