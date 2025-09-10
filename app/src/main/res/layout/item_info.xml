@@ -5,7 +5,7 @@
     android:layout_height="wrap_content"
     android:background="#EEF4FB">
 
-    <TextView
+    <View
         android:id="@+id/bgItemInfo"
         android:layout_width="156dp"
         android:layout_height="92dp"
@@ -37,10 +37,11 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
         android:fontFamily="@font/mulish_semi_bold_600"
-        android:text=""
         android:textColor="#2E3A59"
         android:textSize="12sp"
+        android:elevation="12dp"
         app:layout_constraintBottom_toBottomOf="@id/bgItemInfo"
         app:layout_constraintEnd_toEndOf="@id/bgItemInfo"
-        app:layout_constraintStart_toStartOf="@id/bgItemInfo" />
+        app:layout_constraintStart_toStartOf="@id/bgItemInfo"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
