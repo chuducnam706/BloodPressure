@@ -1,7 +1,6 @@
-package com.example.blood.data;
+package com.example.blood.data_add_pressure;
 
 import androidx.room.Database;
-import androidx.room.Room;
 import androidx.room.RoomDatabase;
 
 @Database(entities = {PressureEntity.class}, version = 1)

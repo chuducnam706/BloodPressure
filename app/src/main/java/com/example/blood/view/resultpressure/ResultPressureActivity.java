@@ -2,23 +2,20 @@ package com.example.blood.view.resultpressure;
 
 import android.content.Intent;
 import android.os.Build;
-import android.util.Log;
 import android.view.LayoutInflater;
 
 import androidx.annotation.RequiresApi;
 import androidx.core.content.ContextCompat;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.example.blood.data.PressureEntity;
+import com.example.blood.data_add_pressure.PressureEntity;
 import com.example.blood.databinding.ActivityResultBinding;
 import com.example.blood.model.ResultPressure;
 import com.example.blood.view.Utils;
 import com.example.blood.view.adapter.ResultPressureAdapter;
-import com.example.blood.view.addpressure.AddBloodPressureActivity;
 import com.example.blood.view.base.BaseActivity;
 import com.example.blood.view.editpressure.EditBloodPressureActivity;
 import com.example.blood.view.moreinfo.MoreInfoActivity;
-import com.example.blood.view.resultpressure.ResultPressureViewModel;
 import com.google.gson.Gson;
 
 import java.time.LocalTime;

@@ -4,7 +4,6 @@ import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.os.Build;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.widget.DatePicker;
 import android.widget.TimePicker;
@@ -13,7 +12,7 @@ import android.widget.Toast;
 import androidx.annotation.RequiresApi;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.example.blood.data.PressureEntity;
+import com.example.blood.data_add_pressure.PressureEntity;
 import com.example.blood.databinding.ActivityAddBloodPressureBinding;
 import com.example.blood.model.Pressure;
 import com.example.blood.model.AddPressure;
