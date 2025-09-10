@@ -3,6 +3,7 @@ package com.example.blood.view.editpressure;
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.content.Intent;
+import android.hardware.camera2.params.MeteringRectangle;
 import android.os.Build;
 import android.view.LayoutInflater;
 import android.widget.DatePicker;
@@ -18,6 +19,7 @@ import com.example.blood.model.AddPressure;
 import com.example.blood.model.Pressure;
 import com.example.blood.view.adapter.PressureAdapter;
 import com.example.blood.view.base.BaseActivity;
+import com.google.android.material.datepicker.MaterialDatePicker;
 import com.google.gson.Gson;
 
 import java.time.LocalTime;
@@ -31,7 +33,7 @@ public class EditBloodPressureActivity extends BaseActivity<AcvityEditBloodPress
     private EditBloodPressureViewModel editBloodPressureViewModel;
     private PressureEntity pressureEntity;
     private int year, month, day;
-    private long hour, minute;
+    private long hour, minute, selectionLastDate;
 
     @Override
     protected AcvityEditBloodPressureBinding inflateBinding(LayoutInflater inflater) {
@@ -62,6 +64,7 @@ public class EditBloodPressureActivity extends BaseActivity<AcvityEditBloodPress
         hour = calendar.get(Calendar.HOUR_OF_DAY);
         minute = calendar.get(Calendar.MINUTE);
 
+        selectionLastDate = MaterialDatePicker.todayInUtcMilliseconds();
     }
 
     @Override
@@ -151,22 +154,37 @@ public class EditBloodPressureActivity extends BaseActivity<AcvityEditBloodPress
         timePickerDialog.show();
     }
 
-    private void showDatePicker() {
 
-        DatePickerDialog datePickerDialog = new DatePickerDialog(
-                this,
-                (DatePicker view, int yearSelected, int monthSelected, int dayOfMonth) -> {
-                    year = yearSelected;
-                    month = monthSelected;
-                    day = dayOfMonth;
+    private void showDatePicker(){
+        MaterialDatePicker<Long> datePicker = MaterialDatePicker
+                .Builder.datePicker()
+                .setTitleText("select date")
+                .setSelection(selectionLastDate)
+                .build();
 
-                    String selectedDate = dayOfMonth + "/" + (monthSelected + 1) + "/" + yearSelected;
-                    editBloodPressureViewModel.updateDate(selectedDate);
-                    binding.txtCalendar.setText(selectedDate);
-                },
-                year, month, day);
+        datePicker.show(getSupportFragmentManager(), "MATERIAL_DATE_PICKER");
 
-        datePickerDialog.show();
+        datePicker.addOnPositiveButtonClickListener(selection -> {
+
+            selectionLastDate = selection;
+
+            Calendar calendar = Calendar.getInstance();
+            calendar.setTimeInMillis((Long) selection);
+
+            int yearSelected = calendar.get(Calendar.YEAR);
+            int monthSelected = calendar.get(Calendar.MONTH + 1);
+            int dayOfMonth = calendar.get(Calendar.DAY_OF_MONTH);
+
+            year = yearSelected;
+            month = monthSelected;
+            day = dayOfMonth;
+
+            String selectedDate = dayOfMonth + "/" + (monthSelected + 1) + "/" + yearSelected;
+
+            editBloodPressureViewModel.updateDate(selectedDate);
+
+            binding.txtCalendar.setText(selectedDate);
+        });
     }
 
     private void getEdtNote() {

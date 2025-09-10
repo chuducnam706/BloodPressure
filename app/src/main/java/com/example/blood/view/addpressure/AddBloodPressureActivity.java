@@ -12,6 +12,7 @@ import android.widget.Toast;
 import androidx.annotation.RequiresApi;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.example.blood.R;
 import com.example.blood.data_add_pressure.PressureEntity;
 import com.example.blood.databinding.ActivityAddBloodPressureBinding;
 import com.example.blood.model.Pressure;
@@ -21,6 +22,7 @@ import com.example.blood.view.resultpressure.ResultPressureActivity;
 import com.example.blood.view.adapter.PressureAdapter;
 import com.example.blood.view.base.BaseActivity;
 import com.example.blood.view.moreinfo.MoreInfoActivity;
+import com.google.android.material.datepicker.MaterialDatePicker;
 import com.google.gson.Gson;
 
 import java.util.Calendar;
@@ -32,9 +34,8 @@ public class AddBloodPressureActivity extends BaseActivity<ActivityAddBloodPress
     private AddPressureViewModel viewModel;
     private PressureEntity entity;
     private int year, month, day;
-    private long hour, minute;
+    private long hour, minute, selectionLastDate;
     private int sys, dia;
-
 
 
     @Override
@@ -60,6 +61,8 @@ public class AddBloodPressureActivity extends BaseActivity<ActivityAddBloodPress
 
         hour = calendar.get(Calendar.HOUR_OF_DAY);
         minute = calendar.get(Calendar.MINUTE);
+
+        selectionLastDate = MaterialDatePicker.todayInUtcMilliseconds();
 
     }
 
@@ -137,23 +140,36 @@ public class AddBloodPressureActivity extends BaseActivity<ActivityAddBloodPress
     }
 
     private void showDatePicker() {
+        MaterialDatePicker<Long> datePicker =
+                MaterialDatePicker.Builder.datePicker()
+                        .setTitleText("Select date")
+                        .setSelection(selectionLastDate)
+                        .build();
 
-        DatePickerDialog datePickerDialog = new DatePickerDialog(
-                this,
-                (DatePicker view, int yearSelected, int monthSelected, int dayOfMonth) -> {
+        datePicker.show(getSupportFragmentManager(), "MATERIAL_DATE_PICKER");
 
-                    year = yearSelected;
-                    month = monthSelected;
-                    day = dayOfMonth;
+        datePicker.addOnPositiveButtonClickListener(selection -> {
 
-                    String selectedDate = dayOfMonth + "/" + (monthSelected + 1) + "/" + yearSelected;
-                    viewModel.insertDate(selectedDate);
-                    binding.txtCalendar.setText(selectedDate);
-                },
-                year, month, day);
+            selectionLastDate = selection;
 
-        datePickerDialog.show();
+            Calendar calendar = Calendar.getInstance();
+            calendar.setTimeInMillis((Long) selection);
+
+            int yearSelected = calendar.get(Calendar.YEAR);
+            int monthSelected = calendar.get(Calendar.MONTH);
+            int dayOfMonth = calendar.get(Calendar.DAY_OF_MONTH);
+
+            year = yearSelected;
+            month = monthSelected + 1;
+            day = dayOfMonth;
+
+            String selectedDate = dayOfMonth + "/" + (monthSelected + 1) + "/" + yearSelected;
+
+            viewModel.insertDate(selectedDate);
+            binding.txtCalendar.setText(selectedDate);
+        });
     }
+
 
     @RequiresApi(api = Build.VERSION_CODES.O)
     private void showTimePicker() {
