@@ -47,6 +47,12 @@
         If your readings are high, your provider may ask you to monitor your blood pressure at home several times a day or once a week.
     </string>
 
+    <string name="addBloodSugar">Add Blood Sugar</string>
+    <string name="sugarConcentration">Sugar concentration</string>
+    <string name="mol_l">mmol/l</string>
+    <string name="enterNote">Your tagline here</string>
+    <string name="measured">Measured</string>
+    <string name="selectionFunction">Select function</string>
 
     <string name="mulish400">font/mulish_bold.ttf</string>
 
