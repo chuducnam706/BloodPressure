@@ -71,6 +71,7 @@ public class IntroActivity extends BaseActivity<ActivityIntroBinding> {
         if (binding.viewPagerIntro.getCurrentItem() == adapter.getItemCount() - 1) {
             Intent intent = new Intent(IntroActivity.this, LanguageActivity.class);
             startActivity(intent);
+            finish();
         } else {
             int currentItem = binding.viewPagerIntro.getCurrentItem();
             binding.viewPagerIntro.setCurrentItem(currentItem + 1);

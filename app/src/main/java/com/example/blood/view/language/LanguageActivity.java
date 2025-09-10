@@ -9,6 +9,7 @@ import androidx.lifecycle.ViewModelProvider;
 import com.example.blood.databinding.ActivityLanguageBinding;
 import com.example.blood.view.adapter.LanguagesAdapter;
 import com.example.blood.view.base.BaseActivity;
+import com.example.blood.view.home.HomeActivity;
 import com.example.blood.view.language.LanguageViewModel;
 
 public class LanguageActivity extends BaseActivity<ActivityLanguageBinding> {
@@ -52,9 +53,8 @@ public class LanguageActivity extends BaseActivity<ActivityLanguageBinding> {
         editor.putBoolean("isFirstRun", false);
         editor.putBoolean("isLanguageSelected", true);
         editor.apply();
-
-        //startActivity(new Intent(LanguageActivity.this, HomeActivity.class));
-
+        startActivity(new Intent(LanguageActivity.this, HomeActivity.class));
+        finish();
     }
 
 

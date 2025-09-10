@@ -1,5 +1,6 @@
 package com.example.blood.view.splash;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Handler;
 import android.os.Looper;
@@ -13,10 +14,11 @@ import com.bumptech.glide.Glide;
 import com.example.blood.R;
 import com.example.blood.databinding.ActivitySplashBinding;
 import com.example.blood.view.base.BaseActivity;
+import com.example.blood.view.home.HomeActivity;
+import com.example.blood.view.intro.IntroActivity;
 
 public class SplashActivity extends BaseActivity<ActivitySplashBinding> {
 
-    private MutableLiveData<String> mutableLiveData = new MutableLiveData<>();
 
     @Override
     protected ActivitySplashBinding inflateBinding(LayoutInflater inflater) {
@@ -41,33 +43,14 @@ public class SplashActivity extends BaseActivity<ActivitySplashBinding> {
         boolean isLanguageSelected = sharedPreferences.getBoolean("isLanguageSelected", false);
 
 
-        Log.d("abc", "1");
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    Thread.sleep(1000);
-                } catch (InterruptedException e) {
-                    throw new RuntimeException(e);
-                }
-                Log.d("abc", Thread.currentThread().getName());
-                int a = 1 + 2;
-                new Handler(Looper.getMainLooper()).post(new Runnable() {
-                    @Override
-                    public void run() {
-                        binding.txtTitle.setText(a + "");
-                        Log.d("abc", Thread.currentThread().getName());
-                    }
-                });
+        new Handler(Looper.getMainLooper()).postDelayed(() -> {
+            if(isFirstRun){
+                Intent intent = new Intent(this, IntroActivity.class);
+                startActivity(intent);
+            } else {
+                startActivity(new Intent(this, HomeActivity.class));
             }
-        }).start();
-        mutableLiveData.observe(this, new Observer<String>() {
-            @Override
-            public void onChanged(String s) {
-                Log.d("Thread", Thread.currentThread().getName());
-                binding.txtTitle.setText(s);
-            }
-        });
+        }, 1000);
     }
 
 }
