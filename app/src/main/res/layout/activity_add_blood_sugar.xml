@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
     android:background="#f2f6ff"
     android:orientation="vertical">
 
@@ -37,17 +38,18 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/lstStatus"
+        android:id="@+id/lstStatusSugar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="54dp"
+        android:layout_marginTop="32dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
         android:orientation="horizontal"
         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-        app:spanCount="1">
+        app:spanCount="1"
+        tools:listitem="@layout/item_add_blood_sugar">
 
     </androidx.recyclerview.widget.RecyclerView>
 
@@ -67,6 +69,7 @@
             android:fontFamily="@font/mulish_bold"
             android:text="@string/sugarConcentration"
             android:textSize="18sp"
+            android:textColor="#1E2D50"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -75,6 +78,11 @@
             android:layout_width="258dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
+            android:textColor="#1E2D50"
+            android:textSize="18sp"
+            android:textAlignment="center"
+            android:hint="0.0"
+            android:fontFamily="@font/mulish_semi_bold_600"
             app:layout_constraintStart_toStartOf="@id/txtSurgarConcentration"
             app:layout_constraintTop_toBottomOf="@id/txtSurgarConcentration" />
 

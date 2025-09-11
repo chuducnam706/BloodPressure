@@ -8,7 +8,7 @@ import androidx.annotation.RequiresApi;
 import androidx.core.content.ContextCompat;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.example.blood.data_add_pressure.PressureEntity;
+import com.example.blood.databloodpressure.PressureEntity;
 import com.example.blood.databinding.ActivityResultBinding;
 import com.example.blood.model.ResultPressure;
 import com.example.blood.view.Utils;

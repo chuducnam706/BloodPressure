@@ -1,4 +1,4 @@
-package com.example.blood.data_add_pressure;
+package com.example.blood.databloodpressure;
 
 import androidx.room.Database;
 import androidx.room.RoomDatabase;

@@ -13,7 +13,7 @@
         android:theme="@style/Theme.Blood"
         tools:targetApi="31">
         <activity
-            android:name=".view.splash.SplashActivity"
+            android:name=".view.addbloodsugar.AddBloodSugarActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

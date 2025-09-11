@@ -7,9 +7,9 @@ import androidx.annotation.RequiresApi;
 import androidx.lifecycle.ViewModel;
 
 import com.example.blood.R;
-import com.example.blood.data_add_pressure.AppDatabase;
-import com.example.blood.data_add_pressure.DataManager;
-import com.example.blood.data_add_pressure.PressureEntity;
+import com.example.blood.databloodpressure.AppDatabase;
+import com.example.blood.databloodpressure.DataManager;
+import com.example.blood.databloodpressure.PressureEntity;
 import com.example.blood.model.AddPressure;
 import com.example.blood.model.Pressure;
 
